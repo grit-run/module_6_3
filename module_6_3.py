@@ -27,8 +27,8 @@ class Pegasus(Eagle, Horse):
         super().__init__()
 
     def move(self, dx, dy):
-        print(super().fly(dx))
-        print(super().run(dy))
+        super().fly(dx)
+        super().run(dy)
 
     def get_pos(self):
         return super().fly(0), super().run(0)
