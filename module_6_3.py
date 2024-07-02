@@ -10,7 +10,6 @@ class Horse:
 
 
 class Eagle(Horse):
-
     def __init__(self):
         super().__init__()
         self.y_distance = 0
@@ -24,27 +23,27 @@ class Eagle(Horse):
 class Pegasus(Eagle, Horse):
 
     def __init__(self):
-        super().__init__()
+        Horse.__init__(self)
+        Eagle.__init__(self)
 
     def move(self, dx, dy):
-        super().run(dx)
-        super().fly(dy)
+        self.run(dx),
+        self.fly(dy)
 
     def get_pos(self):
-        return super().run(0), super().fly(0)
+        return self.run(0), self.fly(0)
 
     def voice(self):
-        if self.y_distance > 0:
-            print(self.sound)
+        print(self.sound)
 
 
-
-p1 = Pegasus()
-
-print(p1.get_pos())
-p1.move(10, 15)
-print(p1.get_pos())
-p1.move(-5, 20)
-print(p1.get_pos())
-
-p1.voice()
+if __name__ == '__main__':
+    p1 = Pegasus()
+    print(p1.get_pos())
+    p1.move(10, 15)
+    print(p1.get_pos())
+    p1.move(-5, 20)
+    print(p1.get_pos())
+    p1.voice()
+#    print(Pegasus.__mro__)
+#    print(p1.__dir__())
